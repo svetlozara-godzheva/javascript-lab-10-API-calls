@@ -2,6 +2,9 @@ let fetchButton = document.getElementById("fetch-btn");
 let xhrButton = document.getElementById("xhr-btn");
 let title = document.getElementById("title");
 let body = document.getElementById("body");
+let formTitle = document.getElementById("form-title");
+let formBody = document.getElementById("form-body");
+let form = document.getElementById("form");
 
 fetchButton.addEventListener("click", () => {
     fetch("https://jsonplaceholder.typicode.com/posts/1").then(response => {
@@ -37,3 +40,22 @@ xhrButton.addEventListener("click", () => {
     xhr.send();
 });
 
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let data = {
+        title: formTitle.value,
+        body: formBody.value
+    }
+
+    fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        body: JSON.stringify(data)
+    }).then(response => {
+        if (!response.ok) {
+            alert(`Server response was not 200 ${response.status}`);
+        }
+        return response.json();
+    }).then(data => {
+        alert(`The form was submitted successfully! ${JSON.stringify(data)}`);
+    }).catch(error => console.log("Error fetching post information", error));
+});
