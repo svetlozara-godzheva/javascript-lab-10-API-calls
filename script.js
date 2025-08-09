@@ -1,7 +1,5 @@
 let fetchButton = document.getElementById("fetch-btn");
 let xhrButton = document.getElementById("xhr-btn");
-let title = document.getElementById("title");
-let body = document.getElementById("body");
 let formId = document.getElementById("form-id");
 let formTitle = document.getElementById("form-title");
 let formBody = document.getElementById("form-body");
@@ -89,7 +87,8 @@ function displayMessage(text) {
 }
 function displayPost(post) {
     messages.innerHTML += `<div class="post">
-     <h3 id="title">${post.title}(${post.id})</h3>
-     <p id="body">${post.body}</p>
+     <h3>Post(${post.id})</h3>
+     <h4>${post.title}</h4>
+     <p>${post.body}</p>
     </div>`
 }

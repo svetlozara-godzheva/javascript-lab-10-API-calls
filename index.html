@@ -10,20 +10,22 @@
     </head>
 
     <body>
-        <div>
+        <h3>Get Requests</h3>
+        <div class="buttons">
             <button id="fetch-btn">Fetch Data with fetch()</button>
             <button id="xhr-btn">Fetch Data with XHR</button>
         </div>
         <form id="form">
+            <h3>Post/Put Form</h3>
             <input placeholder="Enter id" type="number" id="form-id">
             <input required placeholder="Enter title" type="text" id="form-title">
             <input required placeholder="Enter body" type="text" id="form-body">
             <button id="submit">Submit</button>
         </form>
-        <h2>Messages</h2>
-        <div id="messages">
-            <h3 id="title"></h3>
-            <p id="body"></p>
+        <div class="messages">
+            <h3>Messages</h3>
+            <div id="messages">
+            </div>
         </div>
     </body>
 
