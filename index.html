@@ -14,15 +14,17 @@
             <button id="fetch-btn">Fetch Data with fetch()</button>
             <button id="xhr-btn">Fetch Data with XHR</button>
         </div>
-        <div>
+        <form id="form">
+            <input placeholder="Enter id" type="number" id="form-id">
+            <input required placeholder="Enter title" type="text" id="form-title">
+            <input required placeholder="Enter body" type="text" id="form-body">
+            <button id="submit">Submit</button>
+        </form>
+        <h2>Messages</h2>
+        <div id="messages">
             <h3 id="title"></h3>
             <p id="body"></p>
         </div>
-        <form id="form">
-            <input required type="text" id="form-title">
-            <input required type="text" id="form-body">
-            <button id="submit">Submit</button>
-        </form>
     </body>
 
 </html>
